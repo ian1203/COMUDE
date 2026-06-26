@@ -40,7 +40,7 @@ const palabras = [
   { text: "mejorar", size: 14, color: "#F97316" },
   { text: "instalaciones", size: 18, color: "#8B5CF6" },
   { text: "horario", size: 16, color: "#F59E0B" },
-  { text: "Zapopan", size: 24, color: "#1B4FD8" },
+  { text: "Guadalajara", size: 24, color: "#1B4FD8" },
   { text: "gracias", size: 16, color: "#10B981" },
   { text: "participación", size: 15, color: "#06B6D4" },
 ];

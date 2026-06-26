@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
   LayoutDashboard,
   CalendarDays,
+  CircleDollarSign,
   HandCoins,
   MapPin,
   BrainCircuit,
@@ -17,6 +18,7 @@ const navItems = [
   { id: "eventos", label: "Eventos Deportivos", icon: CalendarDays },
   { id: "patrocinadores", label: "Patrocinadores", icon: HandCoins },
   { id: "unidades", label: "Unidades Deportivas", icon: MapPin },
+  { id: "finanzas", label: "Finanzas Operativas", icon: CircleDollarSign },
   { id: "inteligencia", label: "Inteligencia Deportiva", icon: BrainCircuit },
   { id: "encuestas", label: "Encuestas Ciudadanas", icon: ClipboardList },
   { id: "impacto", label: "Impacto Social", icon: HeartHandshake },
@@ -51,7 +53,7 @@ export function Sidebar({ activeModule, onNavigate }: SidebarProps) {
           </div>
           <div>
             <div className="leading-tight font-semibold" style={{ color: "#fff", fontSize: "13px", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-              COMUDE Zapopan
+              COMUDE Guadalajara
             </div>
             <div style={{ color: "rgba(226,232,248,0.55)", fontSize: "10px", letterSpacing: "0.08em" }}>
               360° PLATAFORMA INTEGRAL
@@ -108,7 +110,7 @@ export function Sidebar({ activeModule, onNavigate }: SidebarProps) {
           </div>
           <div>
             <div style={{ color: "#E2E8F8", fontSize: "12px", fontWeight: 500 }}>Dir. General</div>
-            <div style={{ color: "rgba(226,232,248,0.45)", fontSize: "11px" }}>COMUDE Zapopan</div>
+            <div style={{ color: "rgba(226,232,248,0.45)", fontSize: "11px" }}>COMUDE Guadalajara</div>
           </div>
         </div>
       </div>

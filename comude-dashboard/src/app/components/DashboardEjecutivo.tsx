@@ -107,7 +107,7 @@ const unidadesData = [
   { name: "La Tuzanía", ocupacion: 88, participantes: 15400, color: "#06B6D4", status: "yellow" },
   { name: "Santa Margarita", ocupacion: 85, participantes: 14100, color: "#10B981", status: "yellow" },
   { name: "Las Águilas", ocupacion: 79, participantes: 11800, color: "#F59E0B", status: "yellow" },
-  { name: "Zapopan Centro", ocupacion: 72, participantes: 9600, color: "#8B5CF6", status: "green" },
+  { name: "Guadalajara Centro", ocupacion: 72, participantes: 9600, color: "#8B5CF6", status: "green" },
 ];
 
 const COLORS = ["#1B4FD8", "#06B6D4", "#10B981", "#F59E0B", "#8B5CF6", "#F97316"];
@@ -119,7 +119,7 @@ const statusStyles: Record<string, { label: string; color: string; bg: string }>
 };
 
 const executiveAlerts = [
-  { icon: AlertTriangle, severity: "red", title: "Carrera Zapopan 5K", description: "Excedió presupuesto en 14%.", action: "Revisar" },
+  { icon: AlertTriangle, severity: "red", title: "Carrera Guadalajara 5K", description: "Excedió presupuesto en 14%.", action: "Revisar" },
   { icon: Building2, severity: "yellow", title: "Unidad Las Águilas", description: "Tiene ocupación del 79%.", action: "Revisar" },
   { icon: CircleDollarSign, severity: "yellow", title: "Red Cola", description: "Vence convenio en 12 días.", action: "Revisar" },
   { icon: CheckCircle2, severity: "green", title: "Satisfacción ciudadana", description: "Supera meta mensual.", action: "Revisar" },
@@ -133,7 +133,7 @@ const goals2025 = [
   { label: "Colonias impactadas", value: 53 },
 ];
 
-const MapaZapopan = () => {
+const MapaGuadalajara = () => {
   const zonas = [
     { id: "norte", label: "Norte", x: 180, y: 60, r: 48, pct: 78, color: "#1B4FD8" },
     { id: "sur", label: "Sur", x: 200, y: 230, r: 55, pct: 91, color: "#10B981" },
@@ -153,7 +153,7 @@ const MapaZapopan = () => {
             </radialGradient>
           ))}
         </defs>
-        {/* Zapopan boundary silhouette */}
+        {/* Guadalajara boundary silhouette */}
         <path
           d="M 80 40 L 280 30 L 360 80 L 350 200 L 290 290 L 150 300 L 60 250 L 50 130 Z"
           fill="#EEF2FF"
@@ -182,14 +182,18 @@ const MapaZapopan = () => {
         ))}
         {/* Legend */}
         <text x="200" y="315" textAnchor="middle" fill="#6B7A99" fontSize="9">
-          Distribución de Participación por Zona — Zapopan, Jalisco
+          Distribución de Participación por Zona — Guadalajara, Jalisco
         </text>
       </svg>
     </div>
   );
 };
 
-export function DashboardEjecutivo() {
+interface DashboardEjecutivoProps {
+  onNavigate?: (id: string) => void;
+}
+
+export function DashboardEjecutivo({ onNavigate }: DashboardEjecutivoProps) {
   return (
     <div className="space-y-6">
       {/* KPI Cards */}
@@ -350,6 +354,34 @@ export function DashboardEjecutivo() {
         </div>
       </div>
 
+      <div className="rounded-2xl p-5 border flex items-center justify-between" style={{ background: "#fff", borderColor: "var(--border)" }}>
+        <div>
+          <h3 style={{ fontSize: "15px", fontWeight: 700, color: "var(--foreground)" }}>Control financiero-operativo</h3>
+          <p style={{ fontSize: "12px", color: "var(--muted-foreground)", marginTop: "3px" }}>
+            Presupuesto, eventos, ingresos y conciliación en una sola vista.
+          </p>
+          <div className="flex gap-3 mt-3">
+            {[
+              ["Avance presupuestal", "78%"],
+              ["Conciliación automática", "94%"],
+              ["Ahorro estimado", "18 h/mes"],
+            ].map(([label, value]) => (
+              <div key={label} className="rounded-xl px-3 py-2" style={{ background: "var(--input-background)" }}>
+                <div style={{ fontSize: "10px", color: "var(--muted-foreground)" }}>{label}</div>
+                <div style={{ fontSize: "14px", fontWeight: 800, color: "var(--foreground)" }}>{value}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <button
+          onClick={() => onNavigate?.("finanzas")}
+          className="px-4 py-2.5 rounded-xl text-white transition-all hover:opacity-90 active:scale-95"
+          style={{ background: "var(--primary)", fontSize: "12px", fontWeight: 700 }}
+        >
+          Ver Finanzas
+        </button>
+      </div>
+
       {/* Charts Row 1 */}
       <div className="grid gap-4" style={{ gridTemplateColumns: "1fr 380px" }}>
         {/* Participación mensual */}
@@ -474,12 +506,12 @@ export function DashboardEjecutivo() {
         {/* Mapa */}
         <div className="rounded-2xl p-5 border" style={{ background: "#fff", borderColor: "var(--border)" }}>
           <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)", marginBottom: "4px" }}>
-            Mapa de Participación — Zapopan
+            Mapa de Participación — Guadalajara
           </h3>
           <p style={{ fontSize: "11px", color: "var(--muted-foreground)", marginBottom: "8px" }}>
             Distribución geográfica por zona
           </p>
-          <MapaZapopan />
+          <MapaGuadalajara />
         </div>
       </div>
     </div>

@@ -47,7 +47,7 @@ const unidades = [
     color: "#F59E0B",
   },
   {
-    nombre: "Unidad Deportiva Zapopan Centro",
+    nombre: "Unidad Deportiva Guadalajara Centro",
     zona: "Centro", colonias: 4,
     capacidad: 1200, ocupacion: 72,
     horario: "8:00 - 20:00",

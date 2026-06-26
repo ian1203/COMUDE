@@ -31,7 +31,7 @@ const crecimientoData = [
 
 const programas = [
   { nombre: "Deporte para Todos", beneficiarios: 8420, meta: 10000, color: "#1B4FD8", estado: "En progreso" },
-  { nombre: "Zapopan Activa (Adultos Mayores)", beneficiarios: 5240, meta: 6000, color: "#8B5CF6", estado: "En progreso" },
+  { nombre: "Guadalajara Activa (Adultos Mayores)", beneficiarios: 5240, meta: 6000, color: "#8B5CF6", estado: "En progreso" },
   { nombre: "Deporte Inclusivo", beneficiarios: 890, meta: 1000, color: "#06B6D4", estado: "En progreso" },
   { nombre: "Liga Infantil Municipal", beneficiarios: 12400, meta: 12000, color: "#10B981", estado: "Meta alcanzada" },
   { nombre: "Mujer y Deporte", beneficiarios: 6800, meta: 7500, color: "#EC4899", estado: "En progreso" },
@@ -53,13 +53,13 @@ export function ImpactoSocial() {
             style={{ background: "rgba(255,255,255,0.15)", fontSize: "11px", color: "#fff", fontWeight: 500 }}
           >
             <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Reporte para Ayuntamiento de Zapopan · Junio 2025
+            Reporte para Ayuntamiento de Guadalajara · Junio 2025
           </div>
           <h2 style={{ fontSize: "22px", fontWeight: 700, color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
             Informe de Impacto Social y Deportivo
           </h2>
           <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", marginTop: "4px" }}>
-            COMUDE Zapopan 360 · Plataforma Integral de Gestión Deportiva y Participación Ciudadana
+            COMUDE Guadalajara 360 · Plataforma Integral de Gestión Deportiva y Participación Ciudadana
           </p>
         </div>
         {/* Decorative circles */}

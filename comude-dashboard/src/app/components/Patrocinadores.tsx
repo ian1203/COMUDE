@@ -18,8 +18,8 @@ interface Sponsor {
 
 const sponsors: Sponsor[] = [
   {
-    id: 1, nombre: "Nike", sector: "Deportes", monto: 980000, eventos: 12,
-    renovacion: "Dic 2025", nivel: "Platinum", stage: "activo", inicial: "N", color: "#0D1B3E",
+    id: 1, nombre: "Adidas", sector: "Deportes", monto: 980000, eventos: 12,
+    renovacion: "Dic 2025", nivel: "Platinum", stage: "activo", inicial: "A", color: "#0D1B3E",
   },
   {
     id: 2, nombre: "Coca-Cola", sector: "Bebidas", monto: 840000, eventos: 10,
@@ -38,7 +38,7 @@ const sponsors: Sponsor[] = [
     renovacion: "Oct 2025", nivel: "Silver", stage: "propuesta", inicial: "E", color: "#06B6D4",
   },
   {
-    id: 6, nombre: "TotalPlay", sector: "Telecomunicaciones", monto: 210000, eventos: 4,
+    id: 6, nombre: "Totalplay", sector: "Telecomunicaciones", monto: 210000, eventos: 4,
     renovacion: "Ago 2025", nivel: "Silver", stage: "prospectos", inicial: "T", color: "#8B5CF6",
   },
 ];

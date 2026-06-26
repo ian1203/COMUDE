@@ -73,7 +73,7 @@ export function Reportes() {
           <div>
             <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)" }}>Generación de Reportes</h3>
             <p style={{ fontSize: "12px", color: "var(--muted-foreground)" }}>
-              Reportes automáticos con datos en tiempo real · COMUDE Zapopan 2025
+              Reportes automáticos con datos en tiempo real · COMUDE Guadalajara 2025
             </p>
           </div>
           <div className="flex items-center gap-2">

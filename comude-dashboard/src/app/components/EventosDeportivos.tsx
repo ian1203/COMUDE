@@ -4,7 +4,7 @@ import { X, Star, DollarSign, Users, TrendingUp, AlertTriangle, CheckCircle2 } f
 const eventos = [
   {
     id: 1,
-    evento: "Carrera Zapopan 5K",
+    evento: "Carrera Guadalajara 5K",
     fecha: "15 Mar 2025",
     participantes: 4200,
     costoTotal: 186000,
@@ -258,7 +258,7 @@ export function EventosDeportivos() {
           <div className="px-5 pb-2">
             <h5 style={{ fontSize: "12px", fontWeight: 600, color: "var(--foreground)", marginBottom: "10px" }}>Alertas</h5>
             <div className="space-y-2">
-              {selected.evento === "Carrera Zapopan 5K" && (
+              {selected.evento === "Carrera Guadalajara 5K" && (
                 <div className="rounded-xl px-3 py-2 flex gap-2" style={{ background: "#FEF2F2" }}>
                   <AlertTriangle size={15} color="#DC2626" className="shrink-0 mt-0.5" />
                   <div>

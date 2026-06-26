@@ -23,7 +23,7 @@ const colonias = [
   { colonia: "Las Águilas", participantes: 3640 },
   { colonia: "La Tuzanía", participantes: 3410 },
   { colonia: "Arboledas", participantes: 2980 },
-  { colonia: "Zapopan Centro", participantes: 2750 },
+  { colonia: "Guadalajara Centro", participantes: 2750 },
 ];
 
 const tendenciasData = [

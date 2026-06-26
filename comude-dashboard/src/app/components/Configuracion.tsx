@@ -43,7 +43,7 @@ export function Administracion() {
           <div>
             <h3 style={{ fontSize: "16px", fontWeight: 700, color: "var(--foreground)" }}>Administración institucional</h3>
             <p style={{ fontSize: "12px", color: "var(--muted-foreground)", marginTop: "2px" }}>
-              Gobierno de datos, seguridad operativa y trazabilidad para COMUDE Zapopan 360.
+              Gobierno de datos, seguridad operativa y trazabilidad para COMUDE Guadalajara 360.
             </p>
           </div>
           <span className="px-3 py-1 rounded-full" style={{ fontSize: "11px", fontWeight: 700, background: "#ECFDF5", color: "#10B981" }}>
@@ -146,7 +146,7 @@ export function Administracion() {
           <div className="space-y-3 pt-5">
             {[
               ["10:42", "Director General exportó reporte para Ayuntamiento", CheckCircle2, "#10B981"],
-              ["09:18", "Eventos actualizó costo de Carrera Zapopan 5K", AlertTriangle, "#F59E0B"],
+              ["09:18", "Eventos actualizó costo de Carrera Guadalajara 5K", AlertTriangle, "#F59E0B"],
               ["08:55", "Unidades cerró incidencia de Tabachines", CheckCircle2, "#10B981"],
               ["Ayer", "Nuevo rol Consulta Ayuntamiento creado", KeyRound, "#1B4FD8"],
             ].map(([time, action, Icon, color]) => (

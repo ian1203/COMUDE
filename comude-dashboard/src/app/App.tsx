@@ -10,18 +10,19 @@ import { EncuestasCiudadanas } from "./components/EncuestasCiudadanas";
 import { ImpactoSocial } from "./components/ImpactoSocial";
 import { Reportes } from "./components/Reportes";
 import { Administracion } from "./components/Configuracion";
-import { MobileApp } from "../mobile/MobileApp";
+import { FinanzasOperativas } from "./components/FinanzasOperativas";
 import "../styles/fonts.css";
 
-function DesktopDashboard() {
+export default function App() {
   const [activeModule, setActiveModule] = useState("dashboard");
 
   const renderModule = () => {
     switch (activeModule) {
-      case "dashboard": return <DashboardEjecutivo />;
+      case "dashboard": return <DashboardEjecutivo onNavigate={setActiveModule} />;
       case "eventos": return <EventosDeportivos />;
       case "patrocinadores": return <Patrocinadores />;
       case "unidades": return <UnidadesDeportivas />;
+      case "finanzas": return <FinanzasOperativas />;
       case "inteligencia": return <InteligenciaDeportiva />;
       case "encuestas": return <EncuestasCiudadanas />;
       case "impacto": return <ImpactoSocial />;
@@ -58,12 +59,4 @@ function DesktopDashboard() {
       </div>
     </div>
   );
-}
-
-export default function App() {
-  if (window.location.pathname.startsWith("/mobile")) {
-    return <MobileApp />;
-  }
-
-  return <DesktopDashboard />;
 }

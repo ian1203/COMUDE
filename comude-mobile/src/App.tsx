@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import {
   Activity,
@@ -38,47 +38,47 @@ type MobileScreen =
 
 const units = [
   {
-    id: "tabachines",
-    name: "Unidad Deportiva Tabachines",
+    id: "tucson",
+    name: "Unidad Deportiva Tucson",
     zone: "Norte",
     distance: "1.8 km",
     occupancy: 74,
     sports: ["Natacion", "Futbol", "Atletismo"],
     courts: "4 canchas disponibles",
-    address: "Av. Tabachines 2480, Zapopan",
+    address: "Zona Norte, Guadalajara",
   },
   {
-    id: "aguilas",
-    name: "Unidad Deportiva Las Aguilas",
+    id: "independencia",
+    name: "Unidad Deportiva Independencia",
     zone: "Oriente",
     distance: "3.4 km",
     occupancy: 79,
     sports: ["Tenis", "Voleibol", "Futbol"],
     courts: "2 canchas disponibles",
-    address: "Col. Las Aguilas, Zapopan",
+    address: "Col. Independencia, Guadalajara",
   },
   {
-    id: "centro",
-    name: "Unidad Deportiva Zapopan Centro",
+    id: "revolucion",
+    name: "Unidad Deportiva Revolución",
     zone: "Centro",
     distance: "5.1 km",
     occupancy: 68,
     sports: ["Basquetbol", "Padel", "Futbol"],
     courts: "3 espacios disponibles",
-    address: "Centro Historico, Zapopan",
+    address: "Zona Centro, Guadalajara",
   },
 ];
 
 const classes = [
-  { name: "Natacion principiante", unit: "Tabachines", time: "Lun y Mie 07:00", spots: 8 },
-  { name: "Futbol infantil", unit: "Las Aguilas", time: "Mar y Jue 16:00", spots: 12 },
-  { name: "Acondicionamiento", unit: "Zapopan Centro", time: "Sab 08:30", spots: 18 },
+  { name: "Natacion principiante", unit: "Tucson", time: "Lun y Mie 07:00", spots: 8 },
+  { name: "Futbol infantil", unit: "Independencia", time: "Mar y Jue 16:00", spots: 12 },
+  { name: "Acondicionamiento", unit: "Revolución", time: "Sab 08:30", spots: 18 },
 ];
 
 const events = [
   {
     id: "5k",
-    name: "Carrera Zapopan 5K",
+    name: "Carrera Guadalajara 5K",
     date: "15 Mar 2025",
     place: "Parque Metropolitano",
     seats: 420,
@@ -89,7 +89,7 @@ const events = [
     id: "familiar",
     name: "Festival Deportivo Familiar",
     date: "10 May 2025",
-    place: "Unidad Tabachines",
+    place: "Unidad Tucson",
     seats: 680,
     category: "Multideporte",
     detail: "Actividades para ninas, ninos, jovenes y adultos.",
@@ -98,7 +98,7 @@ const events = [
     id: "padel",
     name: "Torneo Abierto de Padel",
     date: "18 Jun 2025",
-    place: "Zapopan Centro",
+    place: "Unidad Revolución",
     seats: 48,
     category: "Padel",
     detail: "Registro por pareja, fase de grupos y final municipal.",
@@ -155,7 +155,7 @@ function StatusBar() {
   return (
     <div className="mobile-status">
       <span>9:41</span>
-      <span>COMUDE Zapopan</span>
+      <span>COMUDE Guadalajara</span>
     </div>
   );
 }
@@ -197,10 +197,10 @@ function Splash({ navigate }: { navigate: (screen: MobileScreen) => void }) {
           <Activity size={36} />
         </div>
         <h1 style={{ fontSize: 34, lineHeight: 1.08, fontWeight: 900, margin: "26px 0 10px" }}>
-          COMUDE Zapopan
+          COMUDE Guadalajara
         </h1>
         <p style={{ fontSize: 15, lineHeight: 1.5, opacity: 0.82, margin: 0 }}>
-          Reserva espacios, encuentra clases y participa en eventos deportivos del municipio.
+          El deporte cerca de ti.
         </p>
       </div>
       <div>
@@ -253,7 +253,7 @@ function HomeScreen({ navigate }: { navigate: (screen: MobileScreen) => void }) 
     <div className="mobile-view">
       <Header
         eyebrow="Hola, Andrea"
-        title="Tu deporte en Zapopan"
+        title="COMUDE Guadalajara"
         subtitle="Accesos rapidos a servicios ciudadanos."
         action={(
           <button className="mobile-button secondary" style={{ width: 42, height: 42, padding: 0 }} onClick={() => navigate("notifications")}>
@@ -365,9 +365,9 @@ function ReservationsScreen() {
       <Header eyebrow="Reservas" title="Reserva una cancha" subtitle="Selecciona unidad, espacio y horario disponible." />
       <div className="mobile-card">
         <select className="mobile-input" defaultValue="tabachines">
-          <option value="tabachines">Unidad Deportiva Tabachines</option>
-          <option value="aguilas">Unidad Deportiva Las Aguilas</option>
-          <option value="centro">Zapopan Centro</option>
+          <option value="tucson">Unidad Deportiva Tucson</option>
+          <option value="independencia">Unidad Deportiva Independencia</option>
+          <option value="revolucion">Unidad Deportiva Revolución</option>
         </select>
         <select className="mobile-input" defaultValue="futbol">
           <option value="futbol">Cancha de futbol</option>
@@ -474,7 +474,7 @@ function MembershipCardScreen({ navigate }: { navigate: (screen: MobileScreen) =
       <div className="membership-card">
         <div className="mobile-row" style={{ justifyContent: "space-between" }}>
           <div>
-            <div style={{ fontSize: 12, opacity: 0.78 }}>COMUDE Zapopan</div>
+            <div style={{ fontSize: 12, opacity: 0.78 }}>COMUDE Guadalajara</div>
             <div style={{ fontSize: 22, fontWeight: 900, marginTop: 8 }}>Andrea Lopez</div>
             <div style={{ fontSize: 12, opacity: 0.78, marginTop: 4 }}>ID CZ-2025-08421</div>
           </div>
@@ -482,7 +482,7 @@ function MembershipCardScreen({ navigate }: { navigate: (screen: MobileScreen) =
         </div>
         <div style={{ display: "flex", gap: 8, marginTop: 22 }}>
           <span className="mobile-chip" style={{ background: "rgba(255,255,255,0.18)", color: "#fff" }}>Activa</span>
-          <span className="mobile-chip" style={{ background: "rgba(255,255,255,0.18)", color: "#fff" }}>Zapopan</span>
+          <span className="mobile-chip" style={{ background: "rgba(255,255,255,0.18)", color: "#fff" }}>Guadalajara</span>
         </div>
       </div>
     </div>
@@ -564,31 +564,6 @@ export function MobileApp() {
   const [screen, setScreen] = useState<MobileScreen>("splash");
   const [unitId, setUnitId] = useState(units[0].id);
   const [eventId, setEventId] = useState(events[0].id);
-
-  useEffect(() => {
-    const manifest = document.createElement("link");
-    manifest.rel = "manifest";
-    manifest.href = "/mobile/manifest.json";
-    manifest.setAttribute("data-mobile-pwa", "true");
-
-    const appleIcon = document.createElement("link");
-    appleIcon.rel = "apple-touch-icon";
-    appleIcon.href = "/mobile/icon-192.svg";
-    appleIcon.setAttribute("data-mobile-pwa", "true");
-
-    const themeColor = document.createElement("meta");
-    themeColor.name = "theme-color";
-    themeColor.content = "#1B4FD8";
-    themeColor.setAttribute("data-mobile-pwa", "true");
-
-    document.head.append(manifest, appleIcon, themeColor);
-    document.title = "COMUDE Zapopan App Ciudadana";
-
-    return () => {
-      document.querySelectorAll("[data-mobile-pwa='true']").forEach((node) => node.remove());
-      document.title = "Institucional Dashboard Design";
-    };
-  }, []);
 
   const showNav = useMemo(() => ["home", "units", "reservations", "events", "profile"].includes(screen), [screen]);
   const navigate = (next: MobileScreen) => setScreen(next);

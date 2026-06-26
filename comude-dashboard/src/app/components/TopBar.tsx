@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Search, Bell, ChevronDown, Settings, LogOut, User, MapPin, CalendarDays, HandCoins, Dumbbell, Smartphone } from "lucide-react";
+import { Search, Bell, ChevronDown, Settings, LogOut, User, MapPin, CalendarDays, HandCoins, Dumbbell } from "lucide-react";
 
 const moduleTitles: Record<string, string> = {
   dashboard: "Dashboard Ejecutivo",
   eventos: "Eventos Deportivos",
   patrocinadores: "Patrocinadores",
   unidades: "Unidades Deportivas",
+  finanzas: "Finanzas Operativas",
   inteligencia: "Inteligencia Deportiva",
   encuestas: "Encuestas Ciudadanas",
   impacto: "Impacto Social",
@@ -15,15 +16,16 @@ const moduleTitles: Record<string, string> = {
 };
 
 const notifications = [
-  { id: 1, text: "Carrera Zapopan 5K excedió presupuesto autorizado", time: "Hace 10 min", unread: true },
+  { id: 1, text: "Carrera Guadalajara 5K excedió presupuesto autorizado", time: "Hace 10 min", unread: true },
   { id: 2, text: "Convenio Red Cola vence en 12 días", time: "Hace 1h", unread: true },
   { id: 3, text: "Reporte para Ayuntamiento listo para descarga", time: "Hace 3h", unread: false },
 ];
 
 const searchItems = [
   { label: "Unidad Deportiva Tabachines", meta: "Gestión de unidades · Norte", module: "unidades", icon: MapPin },
-  { label: "Carrera Zapopan 5K", meta: "Evento · Atletismo · Impacto social", module: "eventos", icon: CalendarDays },
+  { label: "Carrera Guadalajara 5K", meta: "Evento · Atletismo · Impacto social", module: "eventos", icon: CalendarDays },
   { label: "Red Cola", meta: "Patrocinador · Convenio por vencer", module: "patrocinadores", icon: HandCoins },
+  { label: "Conciliación financiera", meta: "Finanzas · Excepciones y depósitos", module: "finanzas", icon: HandCoins },
   { label: "Atletismo", meta: "Deporte · Participación ciudadana", module: "inteligencia", icon: Dumbbell },
   { label: "Las Águilas", meta: "Unidad deportiva · Ocupación 79%", module: "unidades", icon: MapPin },
 ];
@@ -64,7 +66,7 @@ export function TopBar({ activeModule, onNavigate }: TopBarProps) {
           {moduleTitles[activeModule]}
         </h1>
         <p style={{ fontSize: "11px", color: "var(--muted-foreground)" }}>
-          Municipio de Zapopan · Jalisco · Junio 2025
+          Municipio de Guadalajara · Jalisco · Junio 2025
         </p>
       </div>
 
@@ -114,15 +116,6 @@ export function TopBar({ activeModule, onNavigate }: TopBarProps) {
           </div>
         )}
       </div>
-
-      <button
-        onClick={() => window.open("/mobile", "_blank", "noopener,noreferrer")}
-        className="flex items-center gap-2 px-3 py-2 rounded-xl transition-all hover:shadow-sm active:scale-95"
-        style={{ background: "var(--secondary)", color: "var(--primary)", fontSize: "12px", fontWeight: 700 }}
-      >
-        <Smartphone size={14} />
-        Ver App Ciudadana
-      </button>
 
       {/* Notifications */}
       <div className="relative">
