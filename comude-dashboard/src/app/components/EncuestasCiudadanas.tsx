@@ -70,7 +70,7 @@ export function EncuestasCiudadanas() {
         {[
           { label: "Satisfacción General", value: "92%", icon: Star, color: "#1B4FD8", bg: "#EEF2FF", sub: "4.6 / 5.0 estrellas" },
           { label: "NPS Score", value: nps.toString(), icon: TrendingUp, color: "#10B981", bg: "#ECFDF5", sub: "Excelente (>50)" },
-          { label: "Respuestas Totales", value: "8,412", icon: MessageSquare, color: "#8B5CF6", bg: "#F5F3FF", sub: "Jun 2025" },
+          { label: "Respuestas Totales", value: "8,412", icon: MessageSquare, color: "#8B5CF6", bg: "#F5F3FF", sub: "Jun 2026" },
           { label: "Comentarios Positivos", value: "82%", icon: ThumbsUp, color: "#F59E0B", bg: "#FFFBEB", sub: "del total de respuestas" },
         ].map(({ label, value, icon: Icon, color, bg, sub }) => (
           <div key={label} className="rounded-2xl p-5 border" style={{ background: "#fff", borderColor: "var(--border)" }}>

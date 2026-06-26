@@ -19,27 +19,27 @@ interface Sponsor {
 const sponsors: Sponsor[] = [
   {
     id: 1, nombre: "Adidas", sector: "Deportes", monto: 980000, eventos: 12,
-    renovacion: "Dic 2025", nivel: "Platinum", stage: "activo", inicial: "A", color: "#0D1B3E",
+    renovacion: "Dic 2026", nivel: "Platinum", stage: "activo", inicial: "A", color: "#0D1B3E",
   },
   {
     id: 2, nombre: "Coca-Cola", sector: "Bebidas", monto: 840000, eventos: 10,
-    renovacion: "Mar 2026", nivel: "Platinum", stage: "activo", inicial: "C", color: "#DC2626",
+    renovacion: "Nov 2026", nivel: "Platinum", stage: "activo", inicial: "C", color: "#DC2626",
   },
   {
     id: 3, nombre: "Charly", sector: "Deportes", monto: 620000, eventos: 8,
-    renovacion: "Sep 2025", nivel: "Gold", stage: "negociacion", inicial: "C", color: "#1B4FD8",
+    renovacion: "Sep 2026", nivel: "Gold", stage: "negociacion", inicial: "C", color: "#1B4FD8",
   },
   {
     id: 4, nombre: "Red Cola", sector: "Bebidas", monto: 380000, eventos: 6,
-    renovacion: "Jun 2025", nivel: "Gold", stage: "activo", inicial: "R", color: "#DC2626",
+    renovacion: "Jul 2026", nivel: "Gold", stage: "activo", inicial: "R", color: "#DC2626",
   },
   {
     id: 5, nombre: "Electrolit", sector: "Hidratación", monto: 290000, eventos: 5,
-    renovacion: "Oct 2025", nivel: "Silver", stage: "propuesta", inicial: "E", color: "#06B6D4",
+    renovacion: "Oct 2026", nivel: "Silver", stage: "propuesta", inicial: "E", color: "#06B6D4",
   },
   {
     id: 6, nombre: "Totalplay", sector: "Telecomunicaciones", monto: 210000, eventos: 4,
-    renovacion: "Ago 2025", nivel: "Silver", stage: "prospectos", inicial: "T", color: "#8B5CF6",
+    renovacion: "Ago 2026", nivel: "Silver", stage: "prospectos", inicial: "T", color: "#8B5CF6",
   },
 ];
 
@@ -62,7 +62,7 @@ export function Patrocinadores() {
 
   const totalMonto = sponsors.reduce((a, s) => a + s.monto, 0);
   const activos = sponsors.filter((s) => s.stage === "activo").length;
-  const porRenovar = sponsors.filter((s) => s.renovacion.includes("2025")).length;
+  const porRenovar = sponsors.filter((s) => s.renovacion.includes("2026")).length;
 
   return (
     <div className="space-y-5">

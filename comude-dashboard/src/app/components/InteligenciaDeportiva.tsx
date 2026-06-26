@@ -61,7 +61,7 @@ export function InteligenciaDeportiva() {
         {[
           { label: "Índice de Diversificación", value: "6.4", sub: "deportes activos promedio/unidad", trend: "+0.8", up: true, color: "#1B4FD8", bg: "#EEF2FF" },
           { label: "Deporte Emergente #1", value: "Pádel", sub: "Crecimiento: +183% en 12 meses", trend: "+183%", up: true, color: "#10B981", bg: "#ECFDF5" },
-          { label: "Predicción Q3 2025", value: "22,400", sub: "participantes proyectados", trend: "+8.2%", up: true, color: "#8B5CF6", bg: "#F5F3FF" },
+          { label: "Predicción Q3 2026", value: "22,400", sub: "participantes proyectados", trend: "+8.2%", up: true, color: "#8B5CF6", bg: "#F5F3FF" },
         ].map(({ label, value, sub, trend, up, color, bg }) => (
           <div key={label} className="rounded-2xl p-5 border" style={{ background: "#fff", borderColor: "var(--border)" }}>
             <p style={{ fontSize: "11px", color: "var(--muted-foreground)", fontWeight: 500, letterSpacing: "0.04em" }}>
@@ -133,7 +133,7 @@ export function InteligenciaDeportiva() {
         {/* Tendencias */}
         <div className="rounded-2xl p-5 border" style={{ background: "#fff", borderColor: "var(--border)" }}>
           <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)", marginBottom: "4px" }}>
-            Tendencias Deportivas 2025
+            Tendencias Deportivas 2026
           </h3>
           <p style={{ fontSize: "11px", color: "var(--muted-foreground)", marginBottom: "16px" }}>
             Evolución mensual de disciplinas clave

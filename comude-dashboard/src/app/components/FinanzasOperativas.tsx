@@ -124,21 +124,21 @@ const unitIncome = [
 ] as const;
 
 const sponsors = [
-  ["Adidas", "$1,250,000", "$1,250,000", "$0", "18", "31 Dic 2025", "Activo"],
-  ["Coca-Cola", "$840,000", "$700,000", "$140,000", "10", "30 Nov 2025", "Activo"],
-  ["Charly", "$620,000", "$620,000", "$0", "8", "15 Oct 2025", "Activo"],
-  ["Red Cola", "$380,000", "$330,000", "$50,000", "6", "30 Jun 2025", "Por vencer"],
-  ["Electrolit", "$290,000", "$190,000", "$100,000", "5", "20 Sep 2025", "Pendiente cobro"],
-  ["Totalplay", "$260,000", "$260,000", "$0", "4", "12 Dic 2025", "Activo"],
+  ["Adidas", "$1,250,000", "$1,250,000", "$0", "18", "31 Dic 2026", "Activo"],
+  ["Coca-Cola", "$840,000", "$700,000", "$140,000", "10", "30 Nov 2026", "Activo"],
+  ["Charly", "$620,000", "$620,000", "$0", "8", "15 Oct 2026", "Activo"],
+  ["Red Cola", "$380,000", "$330,000", "$50,000", "6", "08 Jul 2026", "Por vencer"],
+  ["Electrolit", "$290,000", "$190,000", "$100,000", "5", "20 Sep 2026", "Pendiente cobro"],
+  ["Totalplay", "$260,000", "$260,000", "$0", "4", "12 Dic 2026", "Activo"],
 ] as const;
 
 const reconciliation = [
-  ["10 Jun", "Reservación cancha fútbol", "Reservaciones", "$1,200", "$1,200", "$0", "Conciliado", "Marcar conciliado"],
-  ["11 Jun", "Clase de natación", "Clases", "$850", "$800", "-$50", "Diferencia", "Revisar"],
-  ["12 Jun", "Inscripción Carrera Guadalajara 5K", "Eventos", "$48,000", "$48,000", "$0", "Conciliado", "Marcar conciliado"],
-  ["14 Jun", "Patrocinio Adidas", "Patrocinios", "$250,000", "$250,000", "$0", "Conciliado", "Marcar conciliado"],
-  ["15 Jun", "Renta de espacio deportivo", "Unidades", "$6,500", "$0", "-$6,500", "Pendiente", "Asociar depósito"],
-  ["16 Jun", "Depósito bancario no identificado", "Banco", "$0", "$4,800", "$4,800", "Sin identificar", "Exportar excepción"],
+  ["20 Jun 2026", "Reservación cancha fútbol", "Reservaciones", "$1,200", "$1,200", "$0", "Conciliado", "Marcar conciliado"],
+  ["21 Jun 2026", "Clase de natación", "Clases", "$850", "$800", "-$50", "Diferencia", "Revisar"],
+  ["22 Jun 2026", "Inscripción Carrera Guadalajara 5K", "Eventos", "$48,000", "$48,000", "$0", "Conciliado", "Marcar conciliado"],
+  ["24 Jun 2026", "Patrocinio Adidas", "Patrocinios", "$250,000", "$250,000", "$0", "Conciliado", "Marcar conciliado"],
+  ["25 Jun 2026", "Renta de espacio deportivo", "Unidades", "$6,500", "$0", "-$6,500", "Pendiente", "Asociar depósito"],
+  ["26 Jun 2026", "Depósito bancario no identificado", "Banco", "$0", "$4,800", "$4,800", "Sin identificar", "Exportar excepción"],
 ] as const;
 
 const approvals = [

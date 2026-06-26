@@ -5,7 +5,7 @@ const eventos = [
   {
     id: 1,
     evento: "Carrera Guadalajara 5K",
-    fecha: "15 Mar 2025",
+    fecha: "27 Jun 2026",
     participantes: 4200,
     costoTotal: 186000,
     presupuestoAutorizado: 163000,
@@ -25,7 +25,7 @@ const eventos = [
   {
     id: 2,
     evento: "Torneo Municipal de Fútbol",
-    fecha: "22 Abr 2025",
+    fecha: "04 Jul 2026",
     participantes: 1860,
     costoTotal: 142000,
     presupuestoAutorizado: 148000,
@@ -45,7 +45,7 @@ const eventos = [
   {
     id: 3,
     evento: "Festival Deportivo Familiar",
-    fecha: "10 May 2025",
+    fecha: "11 Jul 2026",
     participantes: 6800,
     costoTotal: 224000,
     presupuestoAutorizado: 230000,
@@ -65,7 +65,7 @@ const eventos = [
   {
     id: 4,
     evento: "Liga Infantil de Básquetbol",
-    fecha: "05 Jun 2025",
+    fecha: "18 Jul 2026",
     participantes: 940,
     costoTotal: 68000,
     presupuestoAutorizado: 70000,
@@ -85,7 +85,7 @@ const eventos = [
   {
     id: 5,
     evento: "Torneo Abierto de Pádel",
-    fecha: "18 Jun 2025",
+    fecha: "25 Jul 2026",
     participantes: 320,
     costoTotal: 54000,
     presupuestoAutorizado: 56000,
@@ -130,7 +130,7 @@ export function EventosDeportivos() {
         <div className="px-6 py-4 border-b flex items-center justify-between" style={{ borderColor: "var(--border)" }}>
           <div>
             <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)" }}>Control de Eventos e Impacto Social</h3>
-            <p style={{ fontSize: "11px", color: "var(--muted-foreground)" }}>{eventos.length} eventos registrados · evidencia para toma de decisiones 2025</p>
+            <p style={{ fontSize: "11px", color: "var(--muted-foreground)" }}>{eventos.length} eventos registrados · evidencia para toma de decisiones 2026</p>
           </div>
           <button
             className="px-4 py-2 rounded-xl text-white transition-all hover:opacity-90 active:scale-95"

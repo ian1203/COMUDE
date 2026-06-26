@@ -10,7 +10,7 @@ const unidades = [
     deportes: ["Fútbol", "Natación", "Atletismo", "Básquetbol"],
     calificacion: 4.8, participantesActivos: 18200,
     incidencias: 2, mantenimientos: 4, clasesActivas: 18, instructores: 12,
-    proximoMantenimiento: "24 Jun 2025 · Alberca semiolímpica",
+    proximoMantenimiento: "28 Jun 2026 · Alberca semiolímpica",
     color: "#1B4FD8",
   },
   {
@@ -21,7 +21,7 @@ const unidades = [
     deportes: ["Fútbol", "Voleibol", "Pádel"],
     calificacion: 4.6, participantesActivos: 15400,
     incidencias: 1, mantenimientos: 3, clasesActivas: 14, instructores: 9,
-    proximoMantenimiento: "27 Jun 2025 · Cancha de fútbol",
+    proximoMantenimiento: "02 Jul 2026 · Cancha de fútbol",
     color: "#06B6D4",
   },
   {
@@ -32,7 +32,7 @@ const unidades = [
     deportes: ["Básquetbol", "Natación", "Atletismo"],
     calificacion: 4.7, participantesActivos: 14100,
     incidencias: 3, mantenimientos: 2, clasesActivas: 16, instructores: 10,
-    proximoMantenimiento: "30 Jun 2025 · Iluminación exterior",
+    proximoMantenimiento: "06 Jul 2026 · Iluminación exterior",
     color: "#10B981",
   },
   {
@@ -43,7 +43,7 @@ const unidades = [
     deportes: ["Fútbol", "Tenis", "Voleibol"],
     calificacion: 4.5, participantesActivos: 11800,
     incidencias: 4, mantenimientos: 5, clasesActivas: 11, instructores: 7,
-    proximoMantenimiento: "21 Jun 2025 · Sanitarios y vestidores",
+    proximoMantenimiento: "09 Jul 2026 · Sanitarios y vestidores",
     color: "#F59E0B",
   },
   {
@@ -54,7 +54,7 @@ const unidades = [
     deportes: ["Básquetbol", "Fútbol", "Pádel"],
     calificacion: 4.4, participantesActivos: 9600,
     incidencias: 1, mantenimientos: 2, clasesActivas: 9, instructores: 6,
-    proximoMantenimiento: "03 Jul 2025 · Gimnasio funcional",
+    proximoMantenimiento: "13 Jul 2026 · Gimnasio funcional",
     color: "#8B5CF6",
   },
 ];

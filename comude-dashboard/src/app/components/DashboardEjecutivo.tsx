@@ -122,7 +122,7 @@ const executiveAlerts = [
   { icon: CheckCircle2, severity: "green", title: "Satisfacción ciudadana", description: "Supera meta mensual.", action: "Revisar" },
 ];
 
-const goals2025 = [
+const goals2026 = [
   { label: "Participación ciudadana", value: 109 },
   { label: "Eventos realizados", value: 74 },
   { label: "Patrocinios captados", value: 66 },
@@ -298,12 +298,12 @@ export function DashboardEjecutivo({ onNavigate }: DashboardEjecutivoProps) {
           <div className="flex items-center gap-2 mb-4">
             <Target size={16} color="var(--primary)" />
             <div>
-              <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)" }}>Cumplimiento de Metas 2025</h3>
+              <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)" }}>Cumplimiento de Metas 2026</h3>
               <p style={{ fontSize: "11px", color: "var(--muted-foreground)" }}>Seguimiento para Ayuntamiento</p>
             </div>
           </div>
           <div className="space-y-3">
-            {goals2025.map((goal) => {
+            {goals2026.map((goal) => {
               const color = goal.value >= 100 ? "#10B981" : goal.value >= 70 ? "#F59E0B" : "#DC2626";
               return (
                 <div key={goal.label}>
@@ -388,7 +388,7 @@ export function DashboardEjecutivo({ onNavigate }: DashboardEjecutivoProps) {
               <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)" }}>
                 Participación Deportiva Mensual
               </h3>
-              <p style={{ fontSize: "11px", color: "var(--muted-foreground)" }}>Enero – Diciembre 2024</p>
+              <p style={{ fontSize: "11px", color: "var(--muted-foreground)" }}>Enero – Junio 2026</p>
             </div>
             <span
               className="px-3 py-1 rounded-full text-xs font-medium"

@@ -74,7 +74,7 @@ export function TopBar({ activeModule, onNavigate }: TopBarProps) {
           {moduleTitles[activeModule]}
         </h1>
         <p style={{ fontSize: "11px", color: "var(--muted-foreground)" }}>
-          Municipio de Guadalajara · Jalisco · Junio 2025
+          Municipio de Guadalajara · Jalisco · Junio 2026
         </p>
       </div>
 

@@ -21,12 +21,12 @@ const impactoPorColonia = [
 ];
 
 const crecimientoData = [
-  { year: "2020", ciudadanos: 14200 },
-  { year: "2021", ciudadanos: 18400 },
-  { year: "2022", ciudadanos: 22100 },
-  { year: "2023", ciudadanos: 27600 },
-  { year: "2024", ciudadanos: 31200 },
-  { year: "2025", ciudadanos: 32845 },
+  { year: "Ene 2026", ciudadanos: 28400 },
+  { year: "Feb 2026", ciudadanos: 29600 },
+  { year: "Mar 2026", ciudadanos: 30750 },
+  { year: "Abr 2026", ciudadanos: 31620 },
+  { year: "May 2026", ciudadanos: 32310 },
+  { year: "Jun 2026", ciudadanos: 32845 },
 ];
 
 const programas = [
@@ -53,7 +53,7 @@ export function ImpactoSocial() {
             style={{ background: "rgba(255,255,255,0.15)", fontSize: "11px", color: "#fff", fontWeight: 500 }}
           >
             <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Reporte para Ayuntamiento de Guadalajara · Junio 2025
+            Reporte para Ayuntamiento de Guadalajara · Junio 2026
           </div>
           <h2 style={{ fontSize: "22px", fontWeight: 700, color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
             Informe de Impacto Social y Deportivo
@@ -92,9 +92,9 @@ export function ImpactoSocial() {
         {/* Crecimiento histórico */}
         <div className="rounded-2xl p-5 border" style={{ background: "#fff", borderColor: "var(--border)" }}>
           <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)", marginBottom: "4px" }}>
-            Crecimiento Histórico de Ciudadanos Activos
+            Crecimiento 2026 de Ciudadanos Activos
           </h3>
-          <p style={{ fontSize: "11px", color: "var(--muted-foreground)", marginBottom: "12px" }}>2020 – 2025</p>
+          <p style={{ fontSize: "11px", color: "var(--muted-foreground)", marginBottom: "12px" }}>Enero – Junio 2026</p>
           <ResponsiveContainer width="100%" height={200}>
             <AreaChart data={crecimientoData} margin={{ top: 0, right: 0, left: -20, bottom: 0 }}>
               <defs>

@@ -6,8 +6,8 @@ const reportes = [
     id: "mensual",
     titulo: "Reporte Mensual",
     descripcion: "Resumen ejecutivo de participación, eventos y KPIs del mes",
-    periodo: "Mayo 2025",
-    fecha: "01 Jun 2025",
+    periodo: "Mayo 2026",
+    fecha: "01 Jun 2026",
     paginas: 24,
     size: "4.2 MB",
     estado: "Listo",
@@ -18,9 +18,9 @@ const reportes = [
   {
     id: "trimestral",
     titulo: "Reporte Trimestral",
-    descripcion: "Análisis comparativo Q1-Q2 2025 con tendencias y proyecciones",
-    periodo: "Q2 2025 (Abr–Jun)",
-    fecha: "30 Jun 2025",
+    descripcion: "Análisis comparativo Q1-Q2 2026 con tendencias y proyecciones",
+    periodo: "Q2 2026 (Abr–Jun)",
+    fecha: "30 Jun 2026",
     paginas: 58,
     size: "8.7 MB",
     estado: "En generación",
@@ -31,24 +31,24 @@ const reportes = [
   {
     id: "anual",
     titulo: "Reporte Anual",
-    descripcion: "Informe completo de gestión 2024 para presentación al Ayuntamiento",
-    periodo: "Ejercicio Fiscal 2024",
-    fecha: "15 Ene 2025",
+    descripcion: "Informe completo de gestión 2026 para presentación al Ayuntamiento",
+    periodo: "Ejercicio Fiscal 2026",
+    fecha: "26 Jun 2026",
     paginas: 112,
     size: "18.4 MB",
     estado: "Listo",
     color: "#10B981",
     bg: "#ECFDF5",
-    secciones: ["Resumen Ejecutivo", "Logros del Año", "Análisis Financiero", "Impacto Social", "Metas 2025"],
+    secciones: ["Resumen Ejecutivo", "Logros del Año", "Análisis Financiero", "Impacto Social", "Metas 2026"],
   },
 ];
 
 const historial = [
-  { nombre: "Reporte Mensual Abr 2025", tipo: "PDF", fecha: "01 May 2025", tamaño: "4.0 MB" },
-  { nombre: "Reporte Mensual Mar 2025", tipo: "PDF", fecha: "01 Abr 2025", tamaño: "3.8 MB" },
-  { nombre: "Reporte Q1 2025", tipo: "Excel", fecha: "05 Abr 2025", tamaño: "6.2 MB" },
-  { nombre: "Reporte Mensual Feb 2025", tipo: "PDF", fecha: "01 Mar 2025", tamaño: "3.6 MB" },
-  { nombre: "Reporte Anual 2024", tipo: "PDF", fecha: "15 Ene 2025", tamaño: "18.4 MB" },
+  { nombre: "Reporte Mensual Abr 2026", tipo: "PDF", fecha: "01 May 2026", tamaño: "4.0 MB" },
+  { nombre: "Reporte Mensual Mar 2026", tipo: "PDF", fecha: "01 Abr 2026", tamaño: "3.8 MB" },
+  { nombre: "Reporte Q1 2026", tipo: "Excel", fecha: "05 Abr 2026", tamaño: "6.2 MB" },
+  { nombre: "Reporte Mensual Feb 2026", tipo: "PDF", fecha: "01 Mar 2026", tamaño: "3.6 MB" },
+  { nombre: "Reporte Ejecutivo Jun 2026", tipo: "PDF", fecha: "26 Jun 2026", tamaño: "18.4 MB" },
 ];
 
 export function Reportes() {
@@ -73,7 +73,7 @@ export function Reportes() {
           <div>
             <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)" }}>Generación de Reportes</h3>
             <p style={{ fontSize: "12px", color: "var(--muted-foreground)" }}>
-              Reportes automáticos con datos en tiempo real · COMUDE Guadalajara 2025
+              Reportes automáticos con datos en tiempo real · COMUDE Guadalajara 2026
             </p>
           </div>
           <div className="flex items-center gap-2">
