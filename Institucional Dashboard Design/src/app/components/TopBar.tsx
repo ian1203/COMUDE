@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Bell, ChevronDown, Settings, LogOut, User, MapPin, CalendarDays, HandCoins, Dumbbell } from "lucide-react";
+import { Search, Bell, ChevronDown, Settings, LogOut, User, MapPin, CalendarDays, HandCoins, Dumbbell, Smartphone } from "lucide-react";
 
 const moduleTitles: Record<string, string> = {
   dashboard: "Dashboard Ejecutivo",
@@ -114,6 +114,15 @@ export function TopBar({ activeModule, onNavigate }: TopBarProps) {
           </div>
         )}
       </div>
+
+      <button
+        onClick={() => window.open("/mobile", "_blank", "noopener,noreferrer")}
+        className="flex items-center gap-2 px-3 py-2 rounded-xl transition-all hover:shadow-sm active:scale-95"
+        style={{ background: "var(--secondary)", color: "var(--primary)", fontSize: "12px", fontWeight: 700 }}
+      >
+        <Smartphone size={14} />
+        Ver App Ciudadana
+      </button>
 
       {/* Notifications */}
       <div className="relative">

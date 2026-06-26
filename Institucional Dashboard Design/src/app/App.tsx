@@ -10,9 +10,10 @@ import { EncuestasCiudadanas } from "./components/EncuestasCiudadanas";
 import { ImpactoSocial } from "./components/ImpactoSocial";
 import { Reportes } from "./components/Reportes";
 import { Administracion } from "./components/Configuracion";
+import { MobileApp } from "../mobile/MobileApp";
 import "../styles/fonts.css";
 
-export default function App() {
+function DesktopDashboard() {
   const [activeModule, setActiveModule] = useState("dashboard");
 
   const renderModule = () => {
@@ -57,4 +58,12 @@ export default function App() {
       </div>
     </div>
   );
+}
+
+export default function App() {
+  if (window.location.pathname.startsWith("/mobile")) {
+    return <MobileApp />;
+  }
+
+  return <DesktopDashboard />;
 }
