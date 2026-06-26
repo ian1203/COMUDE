@@ -1,7 +1,6 @@
-import { useState } from "react";
 import {
-  AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid,
-  Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend,
+  AreaChart, Area, XAxis, YAxis, CartesianGrid,
+  Tooltip, ResponsiveContainer,
 } from "recharts";
 import {
   Users, CalendarDays, TrendingUp, DollarSign, Star, Building2,
@@ -103,14 +102,12 @@ const deportesData = [
 ];
 
 const unidadesData = [
-  { name: "Tabachines", ocupacion: 94, participantes: 18200, color: "#1B4FD8", status: "red" },
-  { name: "La Tuzanía", ocupacion: 88, participantes: 15400, color: "#06B6D4", status: "yellow" },
-  { name: "Santa Margarita", ocupacion: 85, participantes: 14100, color: "#10B981", status: "yellow" },
-  { name: "Las Águilas", ocupacion: 79, participantes: 11800, color: "#F59E0B", status: "yellow" },
-  { name: "Guadalajara Centro", ocupacion: 72, participantes: 9600, color: "#8B5CF6", status: "green" },
+  { name: "Unidad Deportiva Tucson", ocupacion: 74, participantes: 18200, color: "#1B4FD8", status: "green" },
+  { name: "Unidad Deportiva Independencia", ocupacion: 79, participantes: 15400, color: "#06B6D4", status: "yellow" },
+  { name: "Unidad Deportiva Plan de San Luis", ocupacion: 71, participantes: 14100, color: "#10B981", status: "green" },
+  { name: "Unidad Deportiva Revolución", ocupacion: 88, participantes: 11800, color: "#F59E0B", status: "yellow" },
+  { name: "Unidad Deportiva López Mateos", ocupacion: 64, participantes: 9600, color: "#8B5CF6", status: "green" },
 ];
-
-const COLORS = ["#1B4FD8", "#06B6D4", "#10B981", "#F59E0B", "#8B5CF6", "#F97316"];
 
 const statusStyles: Record<string, { label: string; color: string; bg: string }> = {
   green: { label: "Saludable", color: "#10B981", bg: "#ECFDF5" },
@@ -120,7 +117,7 @@ const statusStyles: Record<string, { label: string; color: string; bg: string }>
 
 const executiveAlerts = [
   { icon: AlertTriangle, severity: "red", title: "Carrera Guadalajara 5K", description: "Excedió presupuesto en 14%.", action: "Revisar" },
-  { icon: Building2, severity: "yellow", title: "Unidad Las Águilas", description: "Tiene ocupación del 79%.", action: "Revisar" },
+  { icon: Building2, severity: "yellow", title: "Unidad Revolución", description: "Tiene ocupación del 88%.", action: "Revisar" },
   { icon: CircleDollarSign, severity: "yellow", title: "Red Cola", description: "Vence convenio en 12 días.", action: "Revisar" },
   { icon: CheckCircle2, severity: "green", title: "Satisfacción ciudadana", description: "Supera meta mensual.", action: "Revisar" },
 ];
@@ -431,40 +428,34 @@ export function DashboardEjecutivo({ onNavigate }: DashboardEjecutivoProps) {
         {/* Top deportes */}
         <div className="rounded-2xl p-5 border" style={{ background: "#fff", borderColor: "var(--border)" }}>
           <h3 style={{ fontSize: "14px", fontWeight: 600, color: "var(--foreground)", marginBottom: "4px" }}>
-            Top Deportes Populares
+            Ranking de Deportes Prioritarios
           </h3>
-          <p style={{ fontSize: "11px", color: "var(--muted-foreground)", marginBottom: "16px" }}>Por participantes activos</p>
-          <ResponsiveContainer width="100%" height={180}>
-            <PieChart>
-              <Pie
-                data={deportesData}
-                cx="50%"
-                cy="50%"
-                innerRadius={50}
-                outerRadius={80}
-                dataKey="participantes"
-                paddingAngle={3}
-              >
-                {deportesData.map((_, i) => (
-                  <Cell key={i} fill={COLORS[i % COLORS.length]} />
-                ))}
-              </Pie>
-              <Tooltip
-                formatter={(v) => [v.toLocaleString(), "Participantes"]}
-                contentStyle={{ borderRadius: "12px", border: "1px solid #DDE1EE", fontSize: "12px" }}
-              />
-            </PieChart>
-          </ResponsiveContainer>
-          <div className="space-y-1.5 mt-2">
+          <p style={{ fontSize: "11px", color: "var(--muted-foreground)", marginBottom: "16px" }}>
+            Participantes activos y decisión sugerida
+          </p>
+          <div className="space-y-3">
             {deportesData.map((d, i) => (
-              <div key={d.deporte} className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-sm shrink-0" style={{ background: COLORS[i] }} />
-                <span style={{ fontSize: "12px", color: "var(--muted-foreground)", flex: 1 }}>{d.deporte}</span>
-                <span style={{ fontSize: "12px", fontWeight: 600, color: "var(--foreground)" }}>
-                  {d.participantes.toLocaleString()}
-                </span>
+              <div key={d.deporte} className="rounded-xl p-3" style={{ background: "var(--input-background)" }}>
+                <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-6 h-6 rounded-lg flex items-center justify-center text-white" style={{ background: d.color, fontSize: "10px", fontWeight: 800 }}>
+                      {i + 1}
+                    </span>
+                    <span style={{ fontSize: "12px", fontWeight: 700, color: "var(--foreground)" }}>{d.deporte}</span>
+                  </div>
+                  <span style={{ fontSize: "12px", fontWeight: 800, color: "var(--foreground)" }}>{d.participantes.toLocaleString()}</span>
+                </div>
+                <div className="w-full h-1.5 rounded-full" style={{ background: "#DDE1EE" }}>
+                  <div className="h-1.5 rounded-full" style={{ width: `${Math.min((d.participantes / 9840) * 100, 100)}%`, background: d.color }} />
+                </div>
               </div>
             ))}
+          </div>
+          <div className="mt-4 rounded-xl p-3" style={{ background: "#ECFDF5", color: "#047857" }}>
+            <div style={{ fontSize: "12px", fontWeight: 800 }}>Acción recomendada</div>
+            <p style={{ fontSize: "11px", marginTop: "3px" }}>
+              Reforzar horarios de fútbol y natación; evaluar expansión de cupos en unidades con demanda alta.
+            </p>
           </div>
         </div>
       </div>

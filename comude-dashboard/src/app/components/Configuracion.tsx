@@ -147,7 +147,7 @@ export function Administracion() {
             {[
               ["10:42", "Director General exportó reporte para Ayuntamiento", CheckCircle2, "#10B981"],
               ["09:18", "Eventos actualizó costo de Carrera Guadalajara 5K", AlertTriangle, "#F59E0B"],
-              ["08:55", "Unidades cerró incidencia de Tabachines", CheckCircle2, "#10B981"],
+              ["08:55", "Unidades cerró incidencia de Tucson", CheckCircle2, "#10B981"],
               ["Ayer", "Nuevo rol Consulta Ayuntamiento creado", KeyRound, "#1B4FD8"],
             ].map(([time, action, Icon, color]) => (
               <div key={action as string} className="flex items-center gap-3 rounded-xl px-4 py-3 border hover:bg-gray-50 transition-colors" style={{ borderColor: "var(--border)" }}>

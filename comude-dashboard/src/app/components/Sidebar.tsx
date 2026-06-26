@@ -10,20 +10,43 @@ import {
   HeartHandshake,
   FileBarChart2,
   ShieldCheck,
+  Bot,
   ChevronRight,
 } from "lucide-react";
 
-const navItems = [
-  { id: "dashboard", label: "Dashboard Ejecutivo", icon: LayoutDashboard },
-  { id: "eventos", label: "Eventos Deportivos", icon: CalendarDays },
-  { id: "patrocinadores", label: "Patrocinadores", icon: HandCoins },
-  { id: "unidades", label: "Unidades Deportivas", icon: MapPin },
-  { id: "finanzas", label: "Finanzas Operativas", icon: CircleDollarSign },
-  { id: "inteligencia", label: "Inteligencia Deportiva", icon: BrainCircuit },
-  { id: "encuestas", label: "Encuestas Ciudadanas", icon: ClipboardList },
-  { id: "impacto", label: "Impacto Social", icon: HeartHandshake },
-  { id: "reportes", label: "Reportes", icon: FileBarChart2 },
-  { id: "administracion", label: "Administración", icon: ShieldCheck },
+const navGroups = [
+  {
+    title: "Gestión Administrativa",
+    items: [
+      { id: "dashboard", label: "Dashboard Ejecutivo", icon: LayoutDashboard },
+      { id: "eventos", label: "Eventos Deportivos", icon: CalendarDays },
+      { id: "patrocinadores", label: "Patrocinadores", icon: HandCoins },
+      { id: "unidades", label: "Unidades Deportivas", icon: MapPin },
+      { id: "inteligencia", label: "Inteligencia Deportiva", icon: BrainCircuit },
+      { id: "encuestas", label: "Encuestas Ciudadanas", icon: ClipboardList },
+      { id: "impacto", label: "Impacto Social", icon: HeartHandshake },
+      { id: "reportes", label: "Reportes", icon: FileBarChart2 },
+    ],
+  },
+  {
+    title: "Finanzas Operativas",
+    items: [
+      { id: "finanzas-resumen", label: "Resumen Financiero", icon: CircleDollarSign },
+      { id: "finanzas-presupuesto", label: "Presupuesto por Programa", icon: CircleDollarSign },
+      { id: "finanzas-costeo", label: "Costeo de Eventos", icon: CircleDollarSign },
+      { id: "finanzas-ingresos", label: "Ingresos por Unidad", icon: CircleDollarSign },
+      { id: "finanzas-patrocinios", label: "Patrocinios y Cobranza", icon: CircleDollarSign },
+      { id: "finanzas-conciliacion", label: "Conciliación Financiera", icon: CircleDollarSign },
+      { id: "finanzas-autorizaciones", label: "Autorizaciones", icon: CircleDollarSign },
+    ],
+  },
+  {
+    title: "Sistema",
+    items: [
+      { id: "administracion", label: "Administración", icon: ShieldCheck },
+      { id: "asistente", label: "Asistente IA", icon: Bot },
+    ],
+  },
 ];
 
 interface SidebarProps {
@@ -64,39 +87,46 @@ export function Sidebar({ activeModule, onNavigate }: SidebarProps) {
 
       {/* Nav */}
       <nav className="flex-1 overflow-y-auto py-4 px-3 space-y-0.5">
-        {navItems.map((item) => {
-          const Icon = item.icon;
-          const isActive = activeModule === item.id;
-          return (
-            <button
-              key={item.id}
-              onClick={() => onNavigate(item.id)}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-150 group relative"
-              style={{
-                background: isActive ? "var(--primary)" : "transparent",
-                color: isActive ? "#fff" : "rgba(226,232,248,0.65)",
-              }}
-              onMouseEnter={(e) => {
-                if (!isActive) {
-                  (e.currentTarget as HTMLElement).style.background = "var(--sidebar-accent)";
-                  (e.currentTarget as HTMLElement).style.color = "#fff";
-                }
-              }}
-              onMouseLeave={(e) => {
-                if (!isActive) {
-                  (e.currentTarget as HTMLElement).style.background = "transparent";
-                  (e.currentTarget as HTMLElement).style.color = "rgba(226,232,248,0.65)";
-                }
-              }}
-            >
-              <Icon size={16} strokeWidth={isActive ? 2.2 : 1.8} />
-              <span style={{ fontSize: "13px", fontWeight: isActive ? 600 : 400 }}>{item.label}</span>
-              {isActive && (
-                <ChevronRight size={14} className="ml-auto opacity-70" />
-              )}
-            </button>
-          );
-        })}
+        {navGroups.map((group) => (
+          <div key={group.title} className="pt-2 first:pt-0">
+            <div className="px-3 pb-1.5 pt-2" style={{ color: "rgba(226,232,248,0.42)", fontSize: "10px", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              {group.title}
+            </div>
+            {group.items.map((item) => {
+              const Icon = item.icon;
+              const isActive = activeModule === item.id || (item.id === "finanzas-resumen" && activeModule === "finanzas");
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => onNavigate(item.id)}
+                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-150 group relative"
+                  style={{
+                    background: isActive ? "var(--primary)" : "transparent",
+                    color: isActive ? "#fff" : "rgba(226,232,248,0.65)",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) {
+                      (e.currentTarget as HTMLElement).style.background = "var(--sidebar-accent)";
+                      (e.currentTarget as HTMLElement).style.color = "#fff";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) {
+                      (e.currentTarget as HTMLElement).style.background = "transparent";
+                      (e.currentTarget as HTMLElement).style.color = "rgba(226,232,248,0.65)";
+                    }
+                  }}
+                >
+                  <Icon size={15} strokeWidth={isActive ? 2.2 : 1.8} />
+                  <span style={{ fontSize: "12px", fontWeight: isActive ? 600 : 400 }}>{item.label}</span>
+                  {isActive && (
+                    <ChevronRight size={14} className="ml-auto opacity-70" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+        ))}
       </nav>
 
       {/* Footer */}

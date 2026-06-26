@@ -12,6 +12,15 @@ import {
   X,
 } from "lucide-react";
 
+export type FinanzasView =
+  | "resumen"
+  | "presupuesto"
+  | "costeo"
+  | "ingresos"
+  | "patrocinios"
+  | "conciliacion"
+  | "autorizaciones";
+
 const status = {
   green: { label: "Correcto", color: "#10B981", bg: "#ECFDF5" },
   yellow: { label: "Atención", color: "#F59E0B", bg: "#FFFBEB" },
@@ -169,15 +178,29 @@ function StatusPill({ tone }: { tone: keyof typeof status }) {
   );
 }
 
-export function FinanzasOperativas() {
+interface FinanzasOperativasProps {
+  view?: FinanzasView;
+}
+
+export function FinanzasOperativas({ view = "resumen" }: FinanzasOperativasProps) {
   const [selectedEvent, setSelectedEvent] = useState<(typeof events)[number] | null>(events[0]);
+  const show = (section: FinanzasView) => view === "resumen" || view === section;
+  const viewTitle: Record<FinanzasView, string> = {
+    resumen: "Resumen Financiero",
+    presupuesto: "Presupuesto por Programa",
+    costeo: "Costeo de Eventos",
+    ingresos: "Ingresos por Unidad",
+    patrocinios: "Patrocinios y Cobranza",
+    conciliacion: "Conciliación Financiera",
+    autorizaciones: "Autorizaciones",
+  };
 
   return (
     <div className="space-y-5">
       <div className="flex items-start justify-between">
         <div>
           <h2 style={{ fontSize: "20px", fontWeight: 800, color: "var(--foreground)", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-            Finanzas Operativas
+            {viewTitle[view]}
           </h2>
           <p style={{ fontSize: "12px", color: "var(--muted-foreground)" }}>
             Inteligencia financiera-operativa para reducir consolidaciones manuales, seguimiento por Excel y revisión de movimientos uno por uno.
@@ -193,14 +216,15 @@ export function FinanzasOperativas() {
         </div>
       </div>
 
-      <div className="grid grid-cols-6 gap-4">
+      {show("resumen") && <div className="grid grid-cols-6 gap-4">
         {[
           ["Presupuesto anual", "$28.5M", "green"],
           ["Ejercido", "$16.8M", "green"],
           ["Comprometido", "$5.4M", "yellow"],
           ["Disponible", "$6.3M", "green"],
           ["Avance presupuestal", "78%", "yellow"],
-          ["Movimientos conciliados", "94%", "green"],
+          ["Conciliación automática", "94%", "green"],
+          ["Tiempo ahorrado estimado", "18 h/mes", "green"],
         ].map(([label, value, tone]) => (
           <Card key={label} className="p-4 transition-all hover:shadow-md">
             <div style={{ fontSize: "10px", color: "var(--muted-foreground)", fontWeight: 700, letterSpacing: "0.04em" }}>{label.toUpperCase()}</div>
@@ -208,9 +232,9 @@ export function FinanzasOperativas() {
             <div className="mt-2"><StatusPill tone={tone as keyof typeof status} /></div>
           </Card>
         ))}
-      </div>
+      </div>}
 
-      <Card className="p-5">
+      {show("presupuesto") && <Card className="p-5">
         <SectionTitle title="Presupuesto por Programa" subtitle="Consolidación automática para evitar armado manual de presupuesto por programa en Excel." />
         <div className="overflow-x-auto">
           <table className="w-full">
@@ -240,9 +264,9 @@ export function FinanzasOperativas() {
             </tbody>
           </table>
         </div>
-      </Card>
+      </Card>}
 
-      <div className="grid gap-5" style={{ gridTemplateColumns: selectedEvent ? "1fr 360px" : "1fr" }}>
+      {show("costeo") && <div className="grid gap-5" style={{ gridTemplateColumns: selectedEvent ? "1fr 360px" : "1fr" }}>
         <Card className="p-5">
           <SectionTitle title="Costeo Inteligente de Eventos" subtitle="Duplica plantillas de eventos previos y compara presupuesto estimado contra costo real sin iniciar otro Excel." />
           <div className="space-y-3">
@@ -318,9 +342,9 @@ export function FinanzasOperativas() {
             </div>
           </Card>
         )}
-      </div>
+      </div>}
 
-      <Card className="p-5">
+      {show("ingresos") && <Card className="p-5">
         <SectionTitle title="Ingresos por Unidad Deportiva" subtitle="Elimina reportes separados por unidad y consolida reservaciones, clases, eventos, rentas e inscripciones." />
         <div className="grid grid-cols-5 gap-3">
           {unitIncome.map(([unit, income, variation, ticket, occupancy, alert]) => (
@@ -330,15 +354,17 @@ export function FinanzasOperativas() {
               <div style={{ fontSize: "11px", color: variation.startsWith("-") ? "#DC2626" : "#10B981", fontWeight: 800 }}>{variation} vs mes anterior</div>
               <div className="mt-3 space-y-1" style={{ fontSize: "11px", color: "var(--muted-foreground)" }}>
                 <div>Ticket promedio: <strong style={{ color: "var(--foreground)" }}>{ticket}</strong></div>
+                <div>Reservaciones: <strong style={{ color: "var(--foreground)" }}>{unit.includes("Revolución") ? "$156K" : "$112K"}</strong></div>
+                <div>Clases/Eventos/Rentas: <strong style={{ color: "var(--foreground)" }}>{unit.includes("Tucson") ? "$236K" : "$174K"}</strong></div>
                 <div>Ocupación: <strong style={{ color: "var(--foreground)" }}>{occupancy}</strong></div>
                 <div>Alertas: <strong style={{ color: alert === "Atención" ? "#F59E0B" : "#10B981" }}>{alert}</strong></div>
               </div>
             </div>
           ))}
         </div>
-      </Card>
+      </Card>}
 
-      <Card className="p-5">
+      {show("patrocinios") && <Card className="p-5">
         <SectionTitle title="Control de Patrocinios" subtitle="Seguimiento de convenios, cobros y vencimientos. Patrocinador principal: Adidas." />
         <div className="grid grid-cols-5 gap-3 mb-4">
           {[
@@ -377,9 +403,9 @@ export function FinanzasOperativas() {
             </div>
           ))}
         </div>
-      </Card>
+      </Card>}
 
-      <Card className="p-5">
+      {show("conciliacion") && <Card className="p-5">
         <div className="flex items-start justify-between mb-4">
           <SectionTitle
             title="Conciliación Financiera"
@@ -425,9 +451,9 @@ export function FinanzasOperativas() {
             </tbody>
           </table>
         </div>
-      </Card>
+      </Card>}
 
-      <Card className="p-5">
+      {show("autorizaciones") && <Card className="p-5">
         <SectionTitle title="Autorizaciones" subtitle="Reduce autorizaciones por WhatsApp, correo y Excel con trazabilidad de solicitud a autorización." />
         <div className="flex items-center gap-2 mb-4">
           {["Solicitud", "Jefe de Unidad", "Coordinación Deportiva", "Finanzas", "Dirección", "Autorizado"].map((step, index) => (
@@ -459,7 +485,7 @@ export function FinanzasOperativas() {
             </tbody>
           </table>
         </div>
-      </Card>
+      </Card>}
     </div>
   );
 }

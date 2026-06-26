@@ -3,7 +3,7 @@ import { MapPin, Users, Clock, Star, Wrench, AlertCircle, GraduationCap, UserChe
 
 const unidades = [
   {
-    nombre: "Unidad Deportiva Tabachines",
+    nombre: "Unidad Deportiva Tucson",
     zona: "Norte", colonias: 8,
     capacidad: 2400, ocupacion: 94,
     horario: "6:00 - 22:00",
@@ -14,7 +14,7 @@ const unidades = [
     color: "#1B4FD8",
   },
   {
-    nombre: "Unidad Deportiva La Tuzanía",
+    nombre: "Unidad Deportiva Independencia",
     zona: "Sur", colonias: 6,
     capacidad: 1800, ocupacion: 88,
     horario: "7:00 - 21:00",
@@ -25,7 +25,7 @@ const unidades = [
     color: "#06B6D4",
   },
   {
-    nombre: "Unidad Deportiva Santa Margarita",
+    nombre: "Unidad Deportiva Plan de San Luis",
     zona: "Poniente", colonias: 7,
     capacidad: 1600, ocupacion: 85,
     horario: "6:00 - 21:00",
@@ -36,7 +36,7 @@ const unidades = [
     color: "#10B981",
   },
   {
-    nombre: "Unidad Deportiva Las Águilas",
+    nombre: "Unidad Deportiva Revolución",
     zona: "Oriente", colonias: 5,
     capacidad: 1400, ocupacion: 79,
     horario: "7:00 - 20:00",
@@ -47,7 +47,7 @@ const unidades = [
     color: "#F59E0B",
   },
   {
-    nombre: "Unidad Deportiva Guadalajara Centro",
+    nombre: "Unidad Deportiva López Mateos",
     zona: "Centro", colonias: 4,
     capacidad: 1200, ocupacion: 72,
     horario: "8:00 - 20:00",

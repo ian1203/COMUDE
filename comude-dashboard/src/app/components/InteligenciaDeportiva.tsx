@@ -17,13 +17,13 @@ const generoData = [
 ];
 
 const colonias = [
-  { colonia: "Tabachines", participantes: 4820 },
-  { colonia: "Santa Margarita", participantes: 4210 },
+  { colonia: "Tucson", participantes: 4820 },
+  { colonia: "Plan de San Luis", participantes: 4210 },
   { colonia: "Jardines", participantes: 3890 },
-  { colonia: "Las Águilas", participantes: 3640 },
-  { colonia: "La Tuzanía", participantes: 3410 },
+  { colonia: "Revolución", participantes: 3640 },
+  { colonia: "Independencia", participantes: 3410 },
   { colonia: "Arboledas", participantes: 2980 },
-  { colonia: "Guadalajara Centro", participantes: 2750 },
+  { colonia: "López Mateos", participantes: 2750 },
 ];
 
 const tendenciasData = [

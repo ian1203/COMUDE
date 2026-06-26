@@ -11,11 +11,11 @@ const kpis = [
 ];
 
 const impactoPorColonia = [
-  { colonia: "Tabachines", beneficiados: 4820 },
+  { colonia: "Tucson", beneficiados: 4820 },
   { colonia: "Sta. Margarita", beneficiados: 4210 },
   { colonia: "Jardines", beneficiados: 3890 },
-  { colonia: "Las Águilas", beneficiados: 3640 },
-  { colonia: "La Tuzanía", beneficiados: 3410 },
+  { colonia: "Revolución", beneficiados: 3640 },
+  { colonia: "Independencia", beneficiados: 3410 },
   { colonia: "Arboledas", beneficiados: 2980 },
   { colonia: "Centro", beneficiados: 2750 },
 ];

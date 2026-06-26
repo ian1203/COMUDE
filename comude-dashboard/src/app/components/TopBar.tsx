@@ -13,6 +13,14 @@ const moduleTitles: Record<string, string> = {
   reportes: "Reportes",
   administracion: "Administración",
   configuracion: "Administración",
+  asistente: "Asistente IA",
+  "finanzas-resumen": "Resumen Financiero",
+  "finanzas-presupuesto": "Presupuesto por Programa",
+  "finanzas-costeo": "Costeo de Eventos",
+  "finanzas-ingresos": "Ingresos por Unidad",
+  "finanzas-patrocinios": "Patrocinios y Cobranza",
+  "finanzas-conciliacion": "Conciliación Financiera",
+  "finanzas-autorizaciones": "Autorizaciones",
 };
 
 const notifications = [
@@ -22,12 +30,12 @@ const notifications = [
 ];
 
 const searchItems = [
-  { label: "Unidad Deportiva Tabachines", meta: "Gestión de unidades · Norte", module: "unidades", icon: MapPin },
+  { label: "Unidad Deportiva Tucson", meta: "Gestión de unidades · Norte", module: "unidades", icon: MapPin },
   { label: "Carrera Guadalajara 5K", meta: "Evento · Atletismo · Impacto social", module: "eventos", icon: CalendarDays },
   { label: "Red Cola", meta: "Patrocinador · Convenio por vencer", module: "patrocinadores", icon: HandCoins },
   { label: "Conciliación financiera", meta: "Finanzas · Excepciones y depósitos", module: "finanzas", icon: HandCoins },
   { label: "Atletismo", meta: "Deporte · Participación ciudadana", module: "inteligencia", icon: Dumbbell },
-  { label: "Las Águilas", meta: "Unidad deportiva · Ocupación 79%", module: "unidades", icon: MapPin },
+  { label: "Revolución", meta: "Unidad deportiva · Ocupación 79%", module: "unidades", icon: MapPin },
 ];
 
 interface TopBarProps {
@@ -110,7 +118,7 @@ export function TopBar({ activeModule, onNavigate }: TopBarProps) {
               </button>
             )) : (
               <div className="px-4 py-4" style={{ fontSize: "12px", color: "var(--muted-foreground)" }}>
-                Sin coincidencias. Prueba con Tabachines, Red Cola o Atletismo.
+                Sin coincidencias. Prueba con Tucson, Red Cola o Atletismo.
               </div>
             )}
           </div>
