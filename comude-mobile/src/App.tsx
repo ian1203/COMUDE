@@ -219,13 +219,14 @@ function Header({ title, subtitle, onBack, action }: { title: string; subtitle?:
     <>
       <StatusBar />
       <div className="mobile-header">
-        <div className="mobile-row start">
+        <div className="mobile-header-main">
           {onBack && (
-            <button className="back-button" onClick={onBack}>
-              <ChevronLeft size={17} /> Regresar
+            <button className="back-button" onClick={onBack} aria-label="Regresar">
+              <ChevronLeft size={22} />
             </button>
           )}
-          <div>
+          <div className="mobile-heading-copy">
+            <span className="mobile-brand">COMUDE Guadalajara</span>
             <h1 className="mobile-title">{title}</h1>
             {subtitle && <p className="mobile-subtitle">{subtitle}</p>}
           </div>
@@ -303,7 +304,7 @@ function HomeScreen({ navigate, selectUnit, selectEvent }: { navigate: (screen: 
 
       <h2 className="mobile-section-title">Unidad cercana destacada</h2>
       <button className="list-card" onClick={() => { selectUnit(featured.id); navigate("unitDetail"); }}>
-        <div className="unit-visual">{featured.zone}</div>
+        <div className="unit-visual sport-visual visual-tucson"><span>{featured.zone}</span></div>
         <div className="mobile-row between">
           <div>
             <strong>{featured.name}</strong>
@@ -316,7 +317,7 @@ function HomeScreen({ navigate, selectUnit, selectEvent }: { navigate: (screen: 
       <h2 className="mobile-section-title">Eventos próximos</h2>
       {events.slice(0, 2).map((event) => (
         <button key={event.id} className="compact-card" onClick={() => { selectEvent(event.id); navigate("eventDetail"); }}>
-          <div className="mobile-icon"><Ticket size={18} /></div>
+          <div className="mobile-icon event-thumb"><Ticket size={18} /></div>
           <div>
             <strong>{event.name}</strong>
             <p>{event.date} · {event.seats} cupos</p>
@@ -334,6 +335,7 @@ function UnitsScreen({ navigate, selectUnit }: { navigate: (screen: Screen) => v
       <div className="search-card"><Search size={16} /><input placeholder="Buscar unidad o deporte" /></div>
       {units.map((unit) => (
         <button key={unit.id} className="list-card" onClick={() => { selectUnit(unit.id); navigate("unitDetail"); }}>
+          <div className={`unit-visual sport-visual visual-${unit.id}`}><span>{unit.zone}</span></div>
           <div className="mobile-row between">
             <div>
               <strong>{unit.name}</strong>
@@ -354,7 +356,7 @@ function UnitDetail({ unitId, navigate }: { unitId: string; navigate: (screen: S
   return (
     <main className="mobile-view">
       <Header title={unit.name} subtitle={unit.address} onBack={() => navigate("units")} />
-      <div className="unit-hero"><span>{unit.zone}</span></div>
+      <div className={`unit-hero sport-visual visual-${unit.id}`}><span>{unit.zone}</span></div>
       <section className="mobile-card">
         <div className="detail-grid">
           <div><span>Horario</span><strong>{unit.schedule}</strong></div>
@@ -426,6 +428,7 @@ function Events({ navigate, selectEvent }: { navigate: (screen: Screen) => void;
       <Header title="Eventos" subtitle="Registro ciudadano para actividades deportivas." onBack={() => navigate("home")} />
       {events.map((event) => (
         <button key={event.id} className="list-card" onClick={() => { selectEvent(event.id); navigate("eventDetail"); }}>
+          <div className={`event-visual sport-visual event-${event.id}`}><span>{event.category}</span></div>
           <div className="mobile-row between">
             <div><strong>{event.name}</strong><p>{event.date} · {event.place}</p></div>
             <span className="status-chip">{event.seats} cupos</span>
@@ -444,7 +447,7 @@ function EventDetail({ eventId, navigate }: { eventId: string; navigate: (screen
   return (
     <main className="mobile-view">
       <Header title={event.name} subtitle={`${event.date} · ${event.time}`} onBack={() => navigate("events")} />
-      <section className="mobile-card premium-card">
+      <section className={`mobile-card premium-card event-detail-card sport-visual event-${event.id}`}>
         <span className="label-light">{event.category}</span>
         <h2>{event.place}</h2>
         <p>{event.detail}</p>
@@ -559,4 +562,3 @@ export function MobileApp() {
 
   return <Shell screen={screen} navigate={navigate}>{view}</Shell>;
 }
-
